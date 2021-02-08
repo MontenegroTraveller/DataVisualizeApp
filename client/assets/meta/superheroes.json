@@ -1,0 +1,93 @@
+{
+    "id": {
+        "title": "Id",
+        "type": "id"
+    },
+    "name": {
+        "title": "Name",
+        "type": "uniq"
+    },
+    "slug": {
+        "title": "Slug",
+        "type": "uniq"
+    },
+    "powerstats.intelligence": {
+        "title": "Intelligence",
+        "type": "number"
+    },
+    "powerstats.strength": {
+        "title": "Strength",
+        "type": "number"
+    },
+    "powerstats.speed": {
+        "title": "Speed",
+        "type": "number"
+    },
+    "powerstats.durability": {
+        "title": "Durability",
+        "type": "number"
+    },
+    "powerstats.power": {
+        "title": "Power",
+        "type": "number"
+    },
+    "powerstats.combat": {
+        "title": "Combat",
+        "type": "number"
+    },
+    "appearance.gender": {
+        "title": "Gender"
+    },
+    "appearance.race": {
+        "title": "Race"
+    },
+    "appearance.height[1]": {
+        "title": "Height"
+    },
+    "appearance.weight[1]": {
+        "title": "Weight"
+    },
+    "appearance.eyeColor": {
+        "title": "EyeColor"
+    },
+    "appearance.hairColor": {
+        "title": "HairColor"
+    },
+    "biography.fullName": {
+        "title": "FullName"
+    },
+    "biography.alterEgos": {
+        "title": "Alter Egos",
+        "type": "unstructured"
+    },
+    "biography.aliases[0]": {
+        "title": "Aliases",
+        "type": "unstructured"
+    },
+    "biography.placeOfBirth": {
+        "title": "Place Of Birth"
+    },
+    "biography.firstAppearance": {
+        "title": "firstAppearance"
+    },
+    "biography.publisher": {
+        "title": "Publisher"
+    },
+    "biography.alignment": {
+        "title": "Alignment"
+    },
+    "work.occupation": {
+        "title": "Occupation"
+    },
+    "work.base": {
+        "title": "Work"
+    },
+    "connections.groupAffiliation": {
+        "title": "groupAffiliation",
+        "type": "unstructured"
+    },
+    "connections.relatives": {
+        "title": "relatives",
+        "type": "unstructured"
+    }
+  }

@@ -1,0 +1,53 @@
+image: node:12.13.0
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - test_branch
+  - dev
+  - production
+
+TEST:
+  stage: test
+  script:
+    - yarn install
+    - yarn run test
+
+TEST_BRANCH:
+  # type: deploy
+  stage: test_branch
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_TALLANDROUND_TESTBRANCH --api-key=$HEROKU_API_KEY
+  only:
+    - test-branch
+
+DEV:
+  # type: deploy
+  stage: dev
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_TALLANDROUND_DEVELOPMENT --api-key=$HEROKU_API_KEY
+  only:
+    - dev
+
+PRODUCTION:
+  type: deploy
+  stage: production
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY --skip_cleanup
+  only:
+    - master
+  when: manual
